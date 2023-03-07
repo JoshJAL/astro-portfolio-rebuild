@@ -1,0 +1,9 @@
+---
+export interface Props {
+  year: number | string;
+}
+
+const { year } = Astro.props;
+---
+
+<p class='font-extrabold md:text-lg'>{year}</p>

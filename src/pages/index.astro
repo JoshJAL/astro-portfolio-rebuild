@@ -1,8 +1,15 @@
 ---
+import AboutSection from '../components/aboutSection/AboutSection.astro';
 import BaseHead from '../components/BaseHead.astro';
+import BioSection from '../components/bioSection/BioSection.astro';
+import Blurb from '../components/blurb/Blurb.astro';
 import Body from '../components/Body.astro';
+import ButtonLink from '../components/buttonLink/ButtonLink';
+import Content from '../components/Content.astro';
 import Header from '../components/header/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import IntroAndImage from '../components/introAndImage/introAndImage.astro';
+import MakesMeHappy from '../components/makesMeHappy/MakesMeHappy.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '../consts';
 ---
 
 <!DOCTYPE html>
@@ -12,5 +19,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   </head>
   <Body>
     <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <Blurb />
+        <IntroAndImage />
+        <ButtonLink href={RESUME} text='Resume' target={'_blank'} />
+        <AboutSection />
+        <ButtonLink href={PROJECTS} text='Portfolio' />
+        <BioSection />
+        <MakesMeHappy />
+        <ButtonLink href={THINGS_I_USE} text='Things I Use' target={'_blank'} />
+        <div class='py-3'></div>
+      </Content>
+    </main>
   </Body>
 </html>

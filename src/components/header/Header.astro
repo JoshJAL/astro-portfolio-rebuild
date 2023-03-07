@@ -1,6 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { CONTACT_ME, SOURCE } from '../../consts';
+import { CONTACT_ME, PROJECTS, SOURCE } from '../../consts';
 import { IoLogoGithub } from 'react-icons/io5/index.js';
 import Rocket from '../icons/Rocket';
 import DropdownMenu from '../dropdownMenu/DropdownMenu';
@@ -17,7 +17,8 @@ import ThemeToggleButton from '../themeToggleButton/ThemeToggleButton';
         </h2>
       </a>
       <div class='items-center gap-6 hidden md:flex'>
-        <HeaderLink href={CONTACT_ME} target='_blank'>Contact Info</HeaderLink>
+        <HeaderLink href={CONTACT_ME}>Contact Info</HeaderLink>
+        <HeaderLink href={PROJECTS}>Projects</HeaderLink>
         <HeaderLink href={SOURCE} target='_blank'>
           <IoLogoGithub /> Source
         </HeaderLink>

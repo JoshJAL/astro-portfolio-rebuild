@@ -1,0 +1,20 @@
+---
+import { CONTACT_ME } from '../../consts';
+import SectionTitle from '../sectionTitle/SectionTitle.astro';
+---
+
+<section class='my-4'>
+  <SectionTitle text='About' />
+  <p class='md:text-lg'>
+    &emsp;Joshua is a full-stack developer based in Tampa, Florida. With a passion for solving problems, both physical
+    and digital. He began on a law school track but his love for computers and desire to problem-solve for as many
+    people as possible led him to a career in web and software development. When not online he loves tinkering as much
+    as possible whether that be building computers or playing board games with his family. Currently, he is open to new
+    opportunities, freelance work, and collaboration projects. He can be reached <a
+      class='text-orange-600 dark:text-teal-300 hover:underline underline-offset-2 cursor-pointer'
+      href={CONTACT_ME}
+    >
+      here
+    </a>.
+  </p>
+</section>

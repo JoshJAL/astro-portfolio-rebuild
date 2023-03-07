@@ -7,3 +7,7 @@ body {
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
 }
+
+ul li {
+  list-style: disc;
+}
