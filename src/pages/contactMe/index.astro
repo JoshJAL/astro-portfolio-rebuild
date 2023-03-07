@@ -1,0 +1,25 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Body from '../../components/Body.astro';
+import ContactLinks from '../../components/contactSection/ContactLinks';
+import ContactSection from '../../components/contactSection/ContactSection.astro';
+import Content from '../../components/Content.astro';
+import Header from '../../components/header/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - Contact Me'} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <ContactSection />
+        <ContactLinks />
+      </Content>
+    </main>
+  </Body>
+</html>
