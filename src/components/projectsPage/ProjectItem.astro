@@ -1,0 +1,31 @@
+---
+import ProgressiveImg from '../progressiveImg/ProgressiveImg';
+
+export interface Props {
+  id: string;
+  projectTitle: string;
+  shortProjectDescription: string;
+  highQualityThumbnail: string;
+  lowQualityThumbnail: string;
+}
+
+const { id, projectTitle, shortProjectDescription, lowQualityThumbnail, highQualityThumbnail } = Astro.props;
+---
+
+<div class=''>
+  <div>
+    <a href={'/projects/' + id}>
+      <div>
+        <h3>{projectTitle}</h3>
+        <p>{shortProjectDescription}</p>
+        <ProgressiveImg
+          client:visible
+          alt={projectTitle + ' thumbnail'}
+          placeholder={lowQualityThumbnail}
+          src={highQualityThumbnail}
+          className='border border-gray-600 rounded-xl'
+        />
+      </div>
+    </a>
+  </div>
+</div>
