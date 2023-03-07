@@ -1,0 +1,32 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { CONTACT_ME, SOURCE } from '../../consts';
+import { IoLogoGithub } from 'react-icons/io5/index.js';
+import Rocket from '../icons/Rocket';
+import DropdownMenu from '../dropdownMenu/DropdownMenu';
+import ThemeToggleButton from '../themeToggleButton/ThemeToggleButton';
+---
+
+<header class='fixed w-full p-2 z-20 backdrop-blur-md'>
+  <div class='mx-auto max-w-3xl'>
+    <nav class='flex items-center gap-3 text-base'>
+      <a href='/' class='group'>
+        <h2 class='font-semibold tracking-tighter p-2 font-mplus text-lg'>
+          <Rocket />
+          Joshua Levine
+        </h2>
+      </a>
+      <div class='items-center gap-6 hidden md:flex'>
+        <HeaderLink href={CONTACT_ME} target='_blank'>Contact Info</HeaderLink>
+        <HeaderLink href={SOURCE} target='_blank'>
+          <IoLogoGithub /> Source
+        </HeaderLink>
+      </div>
+      <div class='flex-1'></div>
+      <ThemeToggleButton client:visible />
+      <div class='md:hidden'>
+        <DropdownMenu client:visible />
+      </div>
+    </nav>
+  </div>
+</header>
