@@ -1,0 +1,127 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'Ticketing Solution';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2022}
+        />
+        <ProjectDescription
+          description='A scalable ticketing solution for use within any company or organization. The application is password protected and developers are the only ones able to whitelist accounts that can gain access and sign up to use the system. Interactions with the application are different based on the type of user; developer, quality assurance, or general user.'
+          description1={'Users can submit tickets that have a title, description, and contain an associated file or image related to the project, as well as a priority level for the ticket. Once a ticket is submitted, a slack message is sent to notify the developers who can then claim those tickets to work on. All users can see who has claimed any individual ticket, but users who have created a ticket have the ability to edit the contents of only their ticket if they feel it is necessary. Tickets are organized according to priority level and Emergency Tickets have a red border so that they stand out from others that much more.'}
+          description2={'Developers can see tickets that they have claimed on a separate page as well as set a complexity level that they feel is appropriate for the individual ticket. Once the ticket is ready developers can send the ticket over the the quality assurance team, who are also notified by a slack message, for review along with any associated URLs.'}
+          description3={'Once the ticket has been reviewed by the quality assurance team they can send it back with any notes they might have regarding the ticket. Developers can see which member of the quality assurance team has reviewed their ticket in case they need to communicate directly. Once a ticket has been completed the developer can click the completed button, removing the ticket from the queue.'}
+          description4={'If a ticket has a complexity level of 13 developers will be given the option to turn the ticket into a kanban project where they can create separate tasks amongst the developer team and and tackle the problem together.'}
+        />
+        <LinksAndStack
+          githubLink='https://github.com/JoshJAL/ticketingSolution'
+          browsers={'Edge/Firefox/Google Chrome/Safari'}
+          stack='HTML, CSS, TypeScript, JavaScript, Next.js'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/signUp.jpg'
+          placeHolder='/public/images/ticketingSolution/signUpCompressed.jpg'
+          alt='Sign Up Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/login.jpg'
+          placeHolder='/public/images/ticketingSolution/loginCompressed.jpg'
+          alt='Login Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/ticketForm.jpg'
+          placeHolder='/public/images/ticketingSolution/ticketFormCompressed.jpg'
+          alt='Home Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/allTicketsPage.jpg'
+          placeHolder='/public/images/ticketingSolution/allTicketsPageCompressed.jpg'
+          alt='All Tickets Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/developerTicketsPage.jpg'
+          placeHolder='/public/images/ticketingSolution/developerTicketsPageCompressed.jpg'
+          alt='Developer Tickets Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/ticketWhenBeingSentToQA.jpg'
+          placeHolder='/public/images/ticketingSolution/ticketWhenBeingSentToQACompressed.jpg'
+          alt='Ticket When Being Sent To Quality Assurance'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/qaReviewTicketPage.jpg'
+          placeHolder='/public/images/ticketingSolution/qaReviewTicketPageCompressed.jpg'
+          alt='Quality Assurance Review Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/ticketWithOptionToSendNotes.jpg'
+          placeHolder='/public/images/ticketingSolution/ticketWithOptionToSendNotesCompressed.jpg'
+          alt='Quality Assurance Ticket With Option To Send Notes'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/createUserPage.jpg'
+          placeHolder='/public/images/ticketingSolution/createUserPageCompressed.jpg'
+          alt='Create User Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/kanbanTables.jpg'
+          placeHolder='/public/images/ticketingSolution/kanbanTablesCompressed.jpg'
+          alt='Kanban Tables Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/populatedKanbanTable.jpg'
+          placeHolder='/public/images/ticketingSolution/populatedKanbanTableCompressed.jpg'
+          alt='Populated Kanban Table'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/ticketingSolution/openedTask.jpg'
+          placeHolder='/public/images/ticketingSolution/openedTaskCompressed.jpg'
+          alt='Opened Task On Kanban Table'
+        />
+      </Content>
+    </main>
+  </Body>
+</html>
