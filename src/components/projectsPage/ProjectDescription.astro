@@ -1,0 +1,105 @@
+---
+export interface Props {
+  description: string;
+  description1?: string;
+  description2?: string;
+  description3?: string;
+  description4?: string;
+  description5?: string;
+  description6?: string;
+  description7?: string;
+  description8?: string;
+  description9?: string;
+}
+
+const {
+  description,
+  description1,
+  description2,
+  description3,
+  description4,
+  description5,
+  description6,
+  description7,
+  description8,
+  description9
+} = Astro.props;
+---
+
+<section>
+  <p class='md:text-lg'>
+    &emsp;{description}
+  </p>
+  {
+    description1 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description1}</p>
+      </>
+    )
+  }
+  {
+    description2 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description2}</p>
+      </>
+    )
+  }
+  {
+    description3 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description3}</p>
+      </>
+    )
+  }
+  {
+    description4 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description4}</p>
+      </>
+    )
+  }
+  {
+    description5 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description5}</p>
+      </>
+    )
+  }
+  {
+    description6 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description6}</p>
+      </>
+    )
+  }
+  {
+    description7 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description7}</p>
+      </>
+    )
+  }
+  {
+    description8 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description8}</p>
+      </>
+    )
+  }
+  {
+    description9 && (
+      <>
+        <br />
+        <p class='md:text-lg'>&emsp;{description9}</p>
+      </>
+    )
+  }
+</section>

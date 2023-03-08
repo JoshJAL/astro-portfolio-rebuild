@@ -1,0 +1,20 @@
+---
+import ProgressiveImg from '../progressiveImg/ProgressiveImg';
+
+export interface Props {
+  alt: string;
+  projectTitle: string;
+  placeHolder: string;
+  src: string;
+}
+
+const { alt, projectTitle, placeHolder, src } = Astro.props;
+---
+
+<ProgressiveImg
+  client:visible
+  alt={projectTitle + ' ' + alt}
+  placeholder={placeHolder}
+  src={src}
+  className={'border-2 rounded-lg w-full mb-4 border-gray-600'}
+/>

@@ -12,20 +12,17 @@ export interface Props {
 const { id, projectTitle, shortProjectDescription, lowQualityThumbnail, highQualityThumbnail } = Astro.props;
 ---
 
-<div class=''>
-  <div>
-    <a href={'/projects/' + id}>
-      <div>
-        <h3>{projectTitle}</h3>
-        <p>{shortProjectDescription}</p>
-        <ProgressiveImg
-          client:visible
-          alt={projectTitle + ' thumbnail'}
-          placeholder={lowQualityThumbnail}
-          src={highQualityThumbnail}
-          className='border border-gray-600 rounded-xl'
-        />
-      </div>
-    </a>
-  </div>
+<div class='w-full'>
+  <a href={'/projects/' + id} class='flex flex-col items-center justify-center'>
+    <h3 class='text-xl'>{projectTitle}</h3>
+    <p class='text-center mb-3 min-h-[75px]'>{shortProjectDescription}</p>
+    <ProgressiveImg
+      client:visible
+      alt={projectTitle + ' thumbnail'}
+      placeholder={lowQualityThumbnail}
+      src={highQualityThumbnail}
+      className='border-2 border-gray-600 rounded-xl'
+    />
+  </a>
+  <hr class='h-1 border-0 bg-orange-200 dark:bg-teal-800 mt-[50px]' />
 </div>

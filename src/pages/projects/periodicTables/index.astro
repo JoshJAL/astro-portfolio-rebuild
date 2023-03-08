@@ -1,0 +1,105 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'Periodic Tables';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+let BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2022}
+        />
+        <ProjectDescription
+          description='A restaurant reservation system for a fictional restaurant. The user is able to create reservations for a specific date and time. The user is also able to assign a reservation to a specific table on a specific date as well as create new tables as needed.'
+        />
+        <LinksAndStack
+          githubLink='https://github.com/JoshJAL/restaurant_reservation_system'
+          browsers={'Edge/Firefox/Google Chrome/Safari'}
+          stack='HTML, CSS, JavaScript, React, NodeJs, PostgreSQL'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicHomePageCompressed.jpg'
+          src='/public/images/periodicTables/periodicHomePage.jpg'
+          alt='Home Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicPreviousDateCompressed.jpg'
+          src='/public/images/periodicTables/periodicPreviousDate.jpg'
+          alt='past date'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicFutureDateCompressed.jpg'
+          src='/public/images/periodicTables/periodicFutureDate.jpg'
+          alt='future date'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicNewReservationCompressed.jpg'
+          src='/public/images/periodicTables/periodicNewReservation.jpg'
+          alt='new reservation page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicEditReservationPageCompressed.jpg'
+          src='/public/images/periodicTables/periodicEditReservationPage.jpg'
+          alt='edit reservation page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicSearchEmptyCompressed.jpg'
+          src='/public/images/periodicTables/periodicSearchEmpty.jpg'
+          alt='search page empty'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicSearchFilledCompressed.jpg'
+          src='/public/images/periodicTables/periodicSearchFilled.jpg'
+          alt='search page filled'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicSeatPageCompressed.jpg'
+          src='/public/images/periodicTables/periodicSeatPage.jpg'
+          alt='seat table page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          placeHolder='/public/images/periodicTables/periodicNewTableCompressed.jpg'
+          src='/images/periodicTables/periodicNewTable.jpg'
+          alt='Periodic Tables new table page'
+        />
+      </Content>
+    </main>
+  </Body>
+</html>
