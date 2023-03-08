@@ -6,6 +6,13 @@ export interface Props {
 const { className = '' } = Astro.props;
 ---
 
+<article
+  class={`px-8 mx-auto max-w-2xl translate-y-12 opacity-0 transform transition-all ease-in-out duration-500 ${className}`}
+  data-replace='{ "translate-y-12" : "translate-y-0", "opacity-0": "opacity-100" } '
+>
+  <slot />
+</article>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const replacers: any = document.querySelectorAll('[data-replace]');
@@ -18,10 +25,3 @@ const { className = '' } = Astro.props;
     }
   });
 </script>
-
-<article
-  class={`px-8 mx-auto max-w-2xl translate-y-12 opacity-0 transform transition-all ease-in-out duration-500 ${className}`}
-  data-replace='{ "translate-y-12" : "translate-y-0", "opacity-0": "opacity-100" } '
->
-  <slot />
-</article>
