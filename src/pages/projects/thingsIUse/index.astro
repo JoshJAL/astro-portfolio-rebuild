@@ -1,0 +1,112 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'Things I Use';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2023}
+        />
+        <ProjectDescription
+          description="A curated list of the tech that I use. This is a static site built with Astro and React. The site features a light and a dark mode. It's purpose is not only to be a place where I can share the tech that I use, but a place for people to get to know me a little better. There are posts about the tech that I use, and why I like it so much."
+        />
+        <LinksAndStack
+          hostedApplication={'https://things-i-use.vercel.app/'}
+          githubLink='https://github.com/JoshJAL/what-i-use'
+          browsers={'Edge/Firefox/Google Chrome/Safari'}
+          stack='Astro, React, Typescript, JavScript, Tailwind, Markdown'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/home-dark.jpg'
+          placeHolder='/images/thingsIUse/home-darkCompressed.jpg'
+          alt='Home page dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/home-light.jpg'
+          placeHolder='/images/thingsIUse/home-lightCompressed.jpg'
+          alt='Home page light mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/audio-dark.jpg'
+          placeHolder='/images/thingsIUse/audio-darkCompressed.jpg'
+          alt='Audio page dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/audio-light.jpg'
+          placeHolder='/images/thingsIUse/audio-lightCompressed.jpg'
+          alt='Audio page light mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/computers-dark.jpg'
+          placeHolder='/images/thingsIUse/computers-darkCompressed.jpg'
+          alt='Computers page dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/computers-light.jpg'
+          placeHolder='/images/thingsIUse/computers-lightCompressed.jpg'
+          alt='Computers page light mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/deskware-dark.jpg'
+          placeHolder='/images/thingsIUse/deskware-darkCompressed.jpg'
+          alt='Deskware page dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/deskware-light.jpg'
+          placeHolder='/images/thingsIUse/deskware-lightCompressed.jpg'
+          alt='Deskware page light mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/post-dark.jpg'
+          placeHolder='/images/thingsIUse/post-darkCompressed.jpg'
+          alt='Post example dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/thingsIUse/post-light.jpg'
+          placeHolder='/images/thingsIUse/post-lightCompressed.jpg'
+          alt='Post example light mode'
+        />
+      </Content>
+    </main>
+  </Body>
+</html>
