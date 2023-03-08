@@ -1,4 +1,4 @@
-import { IoChevronForward } from 'react-icons/io5';
+import { IoChevronForward } from 'react-icons/io5/index.js';
 interface ButtonLinkProps {
   text: string;
   href: string;

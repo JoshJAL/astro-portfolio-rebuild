@@ -1,5 +1,5 @@
-import { IoDocumentTextOutline, IoLogoFacebook, IoLogoGithub, IoLogoGoogle, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
-import { ImKeyboard } from "react-icons/im";
+import { IoDocumentTextOutline, IoLogoFacebook, IoLogoGithub, IoLogoGoogle, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5/index.js";
+import { ImKeyboard } from "react-icons/im/index.js";
 import FancyLink from "./FancyLink";
 import { EMAIL, RESUME, THINGS_I_USE } from "../../consts";
 
