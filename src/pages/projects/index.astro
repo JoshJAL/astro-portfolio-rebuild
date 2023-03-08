@@ -1,6 +1,9 @@
 ---
+import BadgeLabel from '../../components/badgeLabel/BadgeLabel.astro';
 import BaseHead from '../../components/BaseHead.astro';
+import Blurb from '../../components/blurb/Blurb.astro';
 import Body from '../../components/Body.astro';
+import ButtonLink from '../../components/buttonLink/ButtonLink';
 import Content from '../../components/Content.astro';
 import Header from '../../components/header/Header.astro';
 import ProjectItem from '../../components/projectsPage/ProjectItem.astro';
@@ -18,7 +21,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
     <main class='pt-[60px]'>
       <Content>
         <SectionTitle text='Projects - Click to Expand' />
-        <div class='my-8'></div>
+        <div class='my-8'>
+          <Blurb>
+            <p class='px-3 pb-3 md:text-lg'>
+              This is a rebuild of my original portfolio; it is mostly the same, but it is now using Astro, React, and
+              Tailwind instead of Next.js and Chakra UI.
+            </p>
+            <ButtonLink
+              target={'_blank'}
+              href='https://github.com/JoshJAL/updated-portfolio'
+              text='Original Source Code'
+            />
+            <div class='py-2'></div>
+            <ButtonLink target={'_blank'} href='https://updated-portfolio-orcin.vercel.app/' text='Original Site' />
+          </Blurb>
+        </div>
         <div class='grid md:grid-cols-2 grid-cols-1 gap-6'>
           <ProjectItem
             id='periodicTables'
