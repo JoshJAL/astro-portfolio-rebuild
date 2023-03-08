@@ -14,7 +14,7 @@ const { className = '' } = Astro.props;
 </article>
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
-    const replacers: any = document.querySelectorAll('[data-replace]');
+    const replacers = document.querySelectorAll('[data-replace]');
     for (let i = 0; i < replacers.length; i++) {
       let replaceClasses = JSON.parse(replacers[i].dataset.replace.replace(/'/g, '"'));
       Object.keys(replaceClasses).forEach(function (key) {
