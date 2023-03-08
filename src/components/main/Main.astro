@@ -1,0 +1,19 @@
+<main
+  class='pt-[60px] translate-y-12 opacity-0 transform transition-all ease-in-out duration-500'
+  data-replace='{ "translate-y-12" : "translate-y-0", "opacity-0": "opacity-100" } '
+>
+  <slot />
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const replacers: any = document.querySelectorAll('[data-replace]');
+    for (let i = 0; i < replacers.length; i++) {
+      let replaceClasses = JSON.parse(replacers[i].dataset.replace.replace(/'/g, '"'));
+      Object.keys(replaceClasses).forEach(function (key) {
+        replacers[i].classList.remove(key);
+        replacers[i].classList.add(replaceClasses[key]);
+      });
+    }
+  });
+</script>

@@ -5,6 +5,7 @@ import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
 import Content from '../../../components/Content.astro';
 import Header from '../../../components/header/Header.astro';
 import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import Main from '../../../components/main/Main.astro';
 import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
 import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
@@ -29,7 +30,7 @@ function capitalizeFirstLetter(string: string) {
   </head>
   <Body>
     <Header />
-    <main class='pt-[60px]'>
+    <Main>
       <Content>
         <BreadCrumb
           breadCrumbLink={BREADCRUMB_LINK}
@@ -90,6 +91,6 @@ function capitalizeFirstLetter(string: string) {
           alt='save file dialogue'
         />
       </Content>
-    </main>
+    </Main>
   </Body>
 </html>

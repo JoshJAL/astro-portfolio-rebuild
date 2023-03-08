@@ -6,6 +6,7 @@ import Body from '../../components/Body.astro';
 import ButtonLink from '../../components/buttonLink/ButtonLink';
 import Content from '../../components/Content.astro';
 import Header from '../../components/header/Header.astro';
+import Main from '../../components/main/Main.astro';
 import ProjectItem from '../../components/projectsPage/ProjectItem.astro';
 import SectionTitle from '../../components/sectionTitle/SectionTitle.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
@@ -18,7 +19,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
   </head>
   <Body>
     <Header />
-    <main class='pt-[60px]'>
+    <Main>
       <Content>
         <SectionTitle text='Projects - Click to Expand' />
         <div class='my-8'>
@@ -109,6 +110,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
           />
         </div>
       </Content>
-    </main>
+    </Main>
   </Body>
 </html>

@@ -8,6 +8,7 @@ import ButtonLink from '../components/buttonLink/ButtonLink';
 import Content from '../components/Content.astro';
 import Header from '../components/header/Header.astro';
 import IntroAndImage from '../components/introAndImage/introAndImage.astro';
+import Main from '../components/main/Main.astro';
 import MakesMeHappy from '../components/makesMeHappy/MakesMeHappy.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '../consts';
 ---
@@ -19,7 +20,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '..
   </head>
   <Body>
     <Header />
-    <main class='pt-[60px]'>
+    <Main>
       <Content>
         <Blurb>Hello, I&apos;m a full-stack developer based in Tampa, Florida!</Blurb>
         <IntroAndImage />
@@ -31,6 +32,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '..
         <ButtonLink href={THINGS_I_USE} text='Things I Use' target={'_blank'} />
         <div class='py-3'></div>
       </Content>
-    </main>
+    </Main>
   </Body>
 </html>

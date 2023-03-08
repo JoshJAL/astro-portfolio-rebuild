@@ -5,6 +5,7 @@ import ContactLinks from '../../components/contactSection/ContactLinks';
 import ContactSection from '../../components/contactSection/ContactSection.astro';
 import Content from '../../components/Content.astro';
 import Header from '../../components/header/Header.astro';
+import Main from '../../components/main/Main.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 ---
 
@@ -15,11 +16,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
   </head>
   <Body>
     <Header />
-    <main class='pt-[60px]'>
+    <Main>
       <Content>
         <ContactSection />
         <ContactLinks />
       </Content>
-    </main>
+    </Main>
   </Body>
 </html>
