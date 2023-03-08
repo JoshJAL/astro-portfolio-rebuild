@@ -24,7 +24,7 @@ function ProgressiveImg({ placeholder, src, alt, className }: ProgressiveImgProp
     <img
       src={imgSrc}
       alt={alt}
-      className={classNames(className ? className : '', imgSrc === placeholder ? 'filter blur-md' : 'filter blur-none transition-all ease-out duration-200')}
+      className={classNames(className ? className : '', imgSrc === placeholder ? 'filter blur-sm' : 'filter blur-none transition-all ease-out duration-200')}
     />
   )
 }

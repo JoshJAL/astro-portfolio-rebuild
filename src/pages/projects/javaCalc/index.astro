@@ -9,7 +9,7 @@ import ProjectDescription from '../../../components/projectsPage/ProjectDescript
 import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
 
-const PROJECT_TITLE = 'Java Snake';
+const PROJECT_TITLE = 'Java Calculator';
 
 const { pathname } = Astro.url;
 const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
@@ -34,24 +34,36 @@ function capitalizeFirstLetter(string: string) {
         <BreadCrumb
           breadCrumbLink={BREADCRUMB_LINK}
           breadCrumbTitle={BREADCRUMB_TITLE}
-          projectTitle={'Snake in Java'}
+          projectTitle={PROJECT_TITLE}
           year={2023}
         />
         <ProjectDescription
           description='The classic game of Snake. The player controls a snake that moves around the screen and eats apples. This program is written in Java and uses the Java Swing library to create the GUI.'
         />
-        <LinksAndStack githubLink='https://github.com/JoshJAL/JavaSnake' stack='Java' />
+        <LinksAndStack githubLink='https://github.com/JoshJAL/JavaCalculator' stack='Java' />
         <ProjectImg
           projectTitle={PROJECT_TITLE}
-          src='/images/JavaSnake/gameRunning.jpg'
-          placeHolder='/images/JavaSnake/gameRunningCompressed.jpg'
-          alt='Game Running'
+          src='/images/javaCalc/home.jpg'
+          placeHolder='/images/javaCalc/homeCompressed.jpg'
+          alt='Starting Screen'
         />
         <ProjectImg
           projectTitle={PROJECT_TITLE}
-          src='/images/JavaSnake/gameOver.jpg'
-          placeHolder='/images/JavaSnake/gameOverCompressed.jpg'
-          alt='Game Running'
+          src='/images/javaCalc/input.jpg'
+          placeHolder='/images/javaCalc/inputCompressed.jpg'
+          alt='number inputted'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/javaCalc/subtract.jpg'
+          placeHolder='/images/javaCalc/subtractCompressed.jpg'
+          alt='number being subtracted from previous number in calculator'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/javaCalc/result.jpg'
+          placeHolder='/images/javaCalc/resultCompressed.jpg'
+          alt='result of calculation being displayed'
         />
       </Content>
     </main>
