@@ -12,7 +12,7 @@ const { className = '' } = Astro.props;
 >
   <slot />
 </article>
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', function () {
     const replacers: any = document.querySelectorAll('[data-replace]');
     for (let i = 0; i < replacers.length; i++) {
