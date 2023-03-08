@@ -2,15 +2,32 @@
 import BadgeLabel from '../badgeLabel/BadgeLabel.astro';
 
 export interface Props {
+  hostedApplication?: string;
   githubLink: string;
   browsers?: string;
   stack: string;
 }
 
-const { githubLink, browsers, stack } = Astro.props;
+const { hostedApplication, githubLink, browsers, stack } = Astro.props;
 ---
 
 <div class='my-7'>
+  {
+    hostedApplication && (
+      <>
+        <BadgeLabel label='HOSTED APPLICATION' />
+        <p class='md:text-base text-sm mb-4 mt-3'>
+          <a
+            href={hostedApplication}
+            target='_blank'
+            class='text-orange-600 dark:text-teal-300 hover:underline underline-offset-2 cursor-pointer'
+          >
+            {hostedApplication}
+          </a>
+        </p>
+      </>
+    )
+  }
   <BadgeLabel label='GITHUB REPOSITORY' />
   <p class='md:text-base text-sm mb-4 mt-3'>
     <a
