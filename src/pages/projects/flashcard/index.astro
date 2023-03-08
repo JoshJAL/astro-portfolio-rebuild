@@ -1,0 +1,105 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'Flashcard-O-Matic';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class='pt-[60px]'>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2022}
+        />
+        <ProjectDescription
+          description='A flashcard making app for taking notes and studying any subject. Moving into as digitially focused an age as we are, I believe that it is time to start upgrading our ways of studying. This app allows for the user to create decks of flashcards focused on any subject. There are front and back parts of the card for the user to utilize in any way that they wish. The user can create, delete and edit flashcards and decks as they see fit. There is a breadcrumb feature at the top of each page to ensure that the user is always able to revert to any page if they wish to do so.'
+        />
+        <LinksAndStack
+          githubLink='https://github.com/JoshJAL/FlashCards'
+          browsers={'Edge/Firefox/Google Chrome/Safari'}
+          stack='HTML, CSS, JavaScript, React, NodeJs'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/flashcardOMaticHomePage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/flashcardOMaticHomePageCompressed.jpg'
+          alt='Home Page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/viewDeckPage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/viewDeckPageCompressed.jpg'
+          alt='view deck page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/createDeckPage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/createDeckPageCompressed.jpg'
+          alt='create deck page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/editDeckPage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/editDeckPageCompressed.jpg'
+          alt='edit deck page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/studyDeckPage1.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/studyDeckPage1Compressed.jpg'
+          alt='view front of card page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/studyDeckPage2.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/studyDeckPage2Compressed.jpg'
+          alt='view back of card page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/studyDeckConfirmation.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/studyDeckConfirmationCompressed.jpg'
+          alt='finish deck confirmation popup'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/editCardPage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/editCardPageCompressed.jpg'
+          alt='edit card page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/public/images/Flashcard-O-Matic/addCardPage.jpg'
+          placeHolder='/public/images/Flashcard-O-Matic/addCardPageCompressed.jpg'
+          alt='add card page'
+        />
+      </Content>
+    </main>
+  </Body>
+</html>

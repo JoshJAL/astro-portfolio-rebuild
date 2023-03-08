@@ -15,7 +15,7 @@ const { pathname } = Astro.url;
 const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
 const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
 
-let BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
 
 function capitalizeFirstLetter(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
