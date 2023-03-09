@@ -6,6 +6,7 @@ import Blurb from '../components/blurb/Blurb.astro';
 import Body from '../components/Body.astro';
 import ButtonLink from '../components/buttonLink/ButtonLink';
 import Content from '../components/Content.astro';
+import { FiberContainer } from '../components/fiberContainer/FiberContainer';
 import Header from '../components/header/Header.astro';
 import IntroAndImage from '../components/introAndImage/introAndImage.astro';
 import Main from '../components/main/Main.astro';
@@ -23,6 +24,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '..
     <Main>
       <Content>
         <Blurb>Hello, I&apos;m a full-stack developer based in Tampa, Florida!</Blurb>
+        <FiberContainer client:load />
         <IntroAndImage />
         <ButtonLink href={RESUME} text='Resume' target={'_blank'} />
         <AboutSection />
