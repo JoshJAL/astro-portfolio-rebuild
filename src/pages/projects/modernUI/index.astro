@@ -1,0 +1,66 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import Main from '../../../components/main/Main.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'Modern UI';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <Main>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2023}
+        />
+        <ProjectDescription
+          description='A modern UI design for a fictional company. There are multiple pages that are accessible through the various buttons on the navigation bar on the left.'
+        />
+        <LinksAndStack githubLink='https://github.com/JoshJAL/ModernUICSharp' stack='C#' />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/ModernUI/home-page.jpg'
+          placeHolder='/images/ModernUI/home-pageCompressed.jpg'
+          alt='Home Screen'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/ModernUI/discovery-page.jpg'
+          placeHolder='/images/ModernUI/discovery-pageCompressed.jpg'
+          alt='Discovery Screen'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/ModernUI/textBox.jpg'
+          placeHolder='/images/ModernUI/textBoxCompressed.jpg'
+          alt='text box with text inputted'
+        />
+      </Content>
+    </Main>
+  </Body>
+</html>
