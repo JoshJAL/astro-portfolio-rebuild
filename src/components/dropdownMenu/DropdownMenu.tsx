@@ -27,7 +27,6 @@ export default function DropdownMenu() {
           <div className="py-1">
             <DropdownMenuItem href='/projects'>Projects</DropdownMenuItem>
             <DropdownMenuItem href='/contactMe'>Contact Info</DropdownMenuItem>
-            <DropdownMenuItem href={SOURCE}>Source</DropdownMenuItem>
           </div>
         </Menu.Items>
       </Transition>

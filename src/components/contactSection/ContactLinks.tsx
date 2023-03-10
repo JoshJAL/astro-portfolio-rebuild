@@ -13,6 +13,7 @@ export default function ContactLinks() {
       <FancyLink Icon={IoLogoFacebook} text='Facebook' href="https://www.facebook.com/joshua.levine.520" target="_blank" />
       <FancyLink Icon={IoDocumentTextOutline} text='Resume' href={RESUME} target="_blank" />
       <FancyLink Icon={ImKeyboard} text='Things I Use' href={THINGS_I_USE} target="_blank" />
+      <FancyLink Icon={IoLogoGithub} className='md:hidden' text='Source' href={THINGS_I_USE} target="_blank" />
     </div>
   )
 }
