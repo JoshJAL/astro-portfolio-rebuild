@@ -1,0 +1,37 @@
+---
+import { IoChevronForward } from 'react-icons/io5';
+import Masthead from '../components/404/404Masthead.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Body from '../components/Body.astro';
+import Content from '../components/Content.astro';
+import Header from '../components/header/Header.astro';
+import Main from '../components/main/Main.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <Main>
+      <Masthead />
+      <Content>
+        <section>
+          <h1 class='text-3xl text-center mt-12 mb-8'>
+            Ooops... Looks like you ended up somewhere you weren&#39;t supposed to be
+          </h1>
+          <div class='text-center py-4'>
+            <a
+              href='/'
+              class='cursor-pointer inline-flex items-center gap-1 hover:underline underline-offset-2 text-orange-600 decoration-orange-600 dark:decoration-teal-300 dark:text-teal-300'
+              >Take me home!<IoChevronForward /></a
+            >
+          </div>
+        </section>
+      </Content>
+    </Main>
+  </Body>
+</html>
