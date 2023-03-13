@@ -11,7 +11,7 @@ import Header from '../components/header/Header.astro';
 import IntroAndImage from '../components/introAndImage/introAndImage.astro';
 import Main from '../components/main/Main.astro';
 import MakesMeHappy from '../components/makesMeHappy/MakesMeHappy.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE, THREE_D_PORTFOLIO } from '../consts';
 ---
 
 <!DOCTYPE html>
@@ -25,6 +25,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, RESUME, PROJECTS, THINGS_I_USE } from '..
       <Content>
         <Blurb>Hello, I&apos;m a full-stack developer based in Tampa, Florida!</Blurb>
         <FiberContainer client:load />
+        <Blurb>
+          You can also check out my 3D Portfolio!
+          <div class='my-2'></div>
+          <ButtonLink href={THREE_D_PORTFOLIO} text='3D Portfolio' target={'_blank'} />
+        </Blurb>
         <IntroAndImage />
         <ButtonLink href={RESUME} text='Resume' target={'_blank'} />
         <AboutSection />

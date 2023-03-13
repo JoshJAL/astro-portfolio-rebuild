@@ -9,3 +9,4 @@ export const THINGS_I_USE = 'https://things-i-use.vercel.app/';
 export const SITE_TITLE = 'Joshua Levine';
 export const SITE_DESCRIPTION =
   "My Portfolio! Please take some time to learn a little bit about me and don't hesitate to reach out!";
+export const THREE_D_PORTFOLIO = 'https://3d-portfolio-joshjal.vercel.app/';
