@@ -1,5 +1,5 @@
 export const CONTACT_ME = '/contactMe';
-export const EMAIL = 'JoshuaALevine3@gmail.com';
+export const EMAIL = 'JoshuaAlexanderLevine@gmail.com';
 export const PROJECTS = '/projects';
 // Might need to change this to a different link
 export const SOURCE = 'https://github.com/JoshJAL/astro-portfolio-rebuild';
