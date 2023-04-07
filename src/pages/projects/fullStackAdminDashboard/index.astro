@@ -1,0 +1,125 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import BreadCrumb from '../../../components/breadCrumb/BreadCrumb';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro';
+import Main from '../../../components/main/Main.astro';
+import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
+import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+
+const PROJECT_TITLE = 'MERN Stack Admin Dashboard';
+
+const { pathname } = Astro.url;
+const BREADCRUMB_PREVIOUS = pathname.split('/')[1];
+const BREADCRUMB_LINK = '/' + BREADCRUMB_PREVIOUS;
+
+const BREADCRUMB_TITLE = capitalizeFirstLetter(BREADCRUMB_PREVIOUS);
+
+function capitalizeFirstLetter(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <BaseHead title={SITE_TITLE + ' - ' + PROJECT_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <Main>
+      <Content>
+        <BreadCrumb
+          breadCrumbLink={BREADCRUMB_LINK}
+          breadCrumbTitle={BREADCRUMB_TITLE}
+          projectTitle={PROJECT_TITLE}
+          year={2023}
+        />
+        <ProjectDescription
+          description='A full-stack admin dashboard for a fake e-commerce business built using the MERN (Mongoose, Express, React, Node) stack. The dashboard is fully functional, fully responsive and features a light and dark mode.'
+        />
+        <LinksAndStack
+          hostedApplication={'https://admin-frontend-hw02.onrender.com/performance'}
+          githubLink='https://github.com/JoshJAL/fullstack-admin'
+          browsers={'Edge/Firefox/Google Chrome/Safari'}
+          stack='JavaScript, HTML, CSS, Mongoose, Express, React, Node.js'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/dashboard-dark.jpg'
+          placeHolder='/images/MERNAdminDashboard/dashboard-darkCompressed.jpg'
+          alt='dashboard dark mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/dashboard-light.jpg'
+          placeHolder='/images/MERNAdminDashboard/dashboard-lightCompressed.jpg'
+          alt='dashboard light mode'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/products.jpg'
+          placeHolder='/images/MERNAdminDashboard/productsCompressed.jpg'
+          alt='products page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/customers.jpg'
+          placeHolder='/images/MERNAdminDashboard/customersCompressed.jpg'
+          alt='customers page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/transactions.jpg'
+          placeHolder='/images/MERNAdminDashboard/transactionsCompressed.jpg'
+          alt='transactions page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/geography.jpg'
+          placeHolder='/images/MERNAdminDashboard/geographyCompressed.jpg'
+          alt='geography page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/overview.jpg'
+          placeHolder='/images/MERNAdminDashboard/overviewCompressed.jpg'
+          alt='overview page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/daily.jpg'
+          placeHolder='/images/MERNAdminDashboard/dailyCompressed.jpg'
+          alt='daily page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/monthly.jpg'
+          placeHolder='/images/MERNAdminDashboard/monthlyCompressed.jpg'
+          alt='monthly page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/breakdown.jpg'
+          placeHolder='/images/MERNAdminDashboard/breakdownCompressed.jpg'
+          alt='breakdown page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/admin.jpg'
+          placeHolder='/images/MERNAdminDashboard/adminCompressed.jpg'
+          alt='admin page'
+        />
+        <ProjectImg
+          projectTitle={PROJECT_TITLE}
+          src='/images/MERNAdminDashboard/performance.jpg'
+          placeHolder='/images/MERNAdminDashboard/performanceCompressed.jpg'
+          alt='performance page'
+        />
+      </Content>
+    </Main>
+  </Body>
+</html>
