@@ -8,7 +8,7 @@ import LinksAndStack from '../../../components/linksAndStack/LinksAndStack.astro
 import Main from '../../../components/main/Main.astro';
 import ProjectDescription from '../../../components/projectsPage/ProjectDescription.astro';
 import ProjectImg from '../../../components/projectsPage/ProjectImg.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, THINGS_I_USE } from '../../../consts';
 
 const PROJECT_TITLE = 'Things I Use';
 
@@ -42,7 +42,7 @@ function capitalizeFirstLetter(string: string) {
           description="A curated list of the tech that I use. This is a static site built with Astro and React. The site features a light and a dark mode. It's purpose is not only to be a place where I can share the tech that I use, but a place for people to get to know me a little better. There are posts about the tech that I use, and why I like it so much."
         />
         <LinksAndStack
-          hostedApplication={'https://things-i-use.vercel.app/'}
+          hostedApplication={THINGS_I_USE}
           githubLink='https://github.com/JoshJAL/what-i-use'
           browsers={'Edge/Firefox/Google Chrome/Safari'}
           stack='Astro, React, Typescript, JavScript, Tailwind, Markdown'
