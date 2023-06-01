@@ -1,7 +1,6 @@
 export const CONTACT_ME = '/contactMe';
 export const EMAIL = 'JoshuaAlexanderLevine@gmail.com';
 export const PROJECTS = '/projects';
-// Might need to change this to a different link
 export const SOURCE = 'https://github.com/JoshJAL/astro-portfolio-rebuild';
 export const RESUME = '/documents/Levine Resume 2023.pdf';
 export const THINGS_I_USE = 'https://tiu.joshualevine.me/';
